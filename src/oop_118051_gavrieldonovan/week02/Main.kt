@@ -41,7 +41,7 @@ fun main() {
     }
     */
 
-    /* Tugas Mandiri 1 */
+    /* Tugas Mandiri 1
     print("Masukan Judul: ")
     val title = scanner.nextLine()
 
@@ -56,4 +56,47 @@ fun main() {
 
     val loanBook = Loan(title, borrower, duration)
     println("Judul Buku: ${loanBook.bookTitle}\nPeminjam: ${loanBook.borrower}\nLama Pinjam: ${loanBook.loanDuration}")
+    */
+
+    /* Tugas Mandiri 2 */
+    print("Masukan Nama Hero: ")
+    val name: String = scanner.nextLine()
+
+    print("Masukan Damage Hero: ")
+    val damage: Int = scanner.nextInt()
+
+    val hero: Hero = Hero(name, damage)
+    var enemyHp: Int = 100
+    while (hero.isAlive() && enemyHp > 0) {
+        println("Menu:\n1. Serang\n2. Kabur")
+        print("Masukan Opsi: ")
+        val opsi: Int = scanner.nextInt()
+        if (opsi == 1) {
+            enemyHp -= hero.baseDamage
+            println("Sisa HP Musuh: $enemyHp")
+            if (enemyHp > 0) {
+                hero.takeDamage((10..20).random())
+                println("Sisa HP Hero: ${hero.hp}")
+                if (hero.hp <= 0)
+                    break
+            } else {
+                println("Musuh telah dikalahkan, Hero menang!!!\n")
+            }
+        } else if (opsi == 2) {
+            println("Hero kabur dari pertempuran!\n")
+            break
+        } else {
+            println("Opsi tidak sesuai!\n")
+        }
+    }
+
+    println("\n\nHP Hero Akhir: ${hero.hp}\nHP Musuh Akhir: $enemyHp")
+    if (hero.isAlive()) {
+        if (enemyHp > 0)
+            println("Hero kabur dan gagal mengalahkan musuh!\n")
+        else
+            println("Hero berhasil mengalahkan musuh!\n")
+    } else {
+        println("Hero mati dikalahkan oleh musuh!\n")
+    }
 }
