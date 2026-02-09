@@ -4,6 +4,7 @@ import java.util.Scanner
 fun main() {
     val scanner = Scanner(System.`in`)
 
+    /* Guided Lab
     println("--- APLIKASI PMB UMN ---")
 
     print("Masukan Nama: ")
@@ -38,4 +39,21 @@ fun main() {
     } else {
         println("Pilihan ngawur, pendaftaran batal!")
     }
+    */
+
+    /* Tugas Mandiri 1 */
+    print("Masukan Judul: ")
+    val title = scanner.nextLine()
+
+    print("Masukan Peminjam: ")
+    val borrower = scanner.nextLine()
+
+    print("Lama Pinjam: ")
+    var duration = scanner.nextInt()
+
+    if (duration < 0)
+        duration = 1
+
+    val loanBook = Loan(title, borrower, duration)
+    println("Judul Buku: ${loanBook.bookTitle}\nPeminjam: ${loanBook.borrower}\nLama Pinjam: ${loanBook.loanDuration}")
 }
