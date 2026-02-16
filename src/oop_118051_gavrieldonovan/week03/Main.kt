@@ -19,4 +19,12 @@ fun main() {
     banagnum.damage = 9999
     println("Damage weapon ${banagnum.name}: ${banagnum.damage}")
     println("Tier weapon ${banagnum.name}: ${banagnum.tier}")
+
+    val dani = Player("Danidev")
+    //println("${dani.username} current exp: ${dani.xp}")
+
+    dani.addXp(50)
+    println("${dani.username} current level: ${dani.level}")
+    dani.addXp(60)
+    println("${dani.username} current level: ${dani.level}")
 }
