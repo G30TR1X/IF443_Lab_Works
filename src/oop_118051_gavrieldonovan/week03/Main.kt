@@ -12,4 +12,11 @@ fun main() {
 
     println("Pajak yang harus dibayar: ${e.tax}")
     */
+
+    val banagnum = Weapon("Banagnum")
+    banagnum.damage = -50
+    println("Damage weapon ${banagnum.name}: ${banagnum.damage}")
+    banagnum.damage = 9999
+    println("Damage weapon ${banagnum.name}: ${banagnum.damage}")
+    println("Tier weapon ${banagnum.name}: ${banagnum.tier}")
 }
