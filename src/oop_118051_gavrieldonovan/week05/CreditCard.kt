@@ -9,9 +9,9 @@ class CreditCard(
     override fun processPayment(amount: Double) {
         if (usedAmount + amount < limit) {
             usedAmount += amount
-            println("Transaksi Sukses")
+            println("Transaksi $accountName Sukses")
         } else {
-            println("Transaksi Di tolak")
+            println("Transaksi $accountName Di tolak")
         }
     }
 }
