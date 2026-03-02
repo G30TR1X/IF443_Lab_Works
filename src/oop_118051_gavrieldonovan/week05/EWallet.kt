@@ -12,6 +12,7 @@ class EWallet(
         }
 
         balance -= amount
+        println("Transaksi Sukses")
     }
 
     fun topUp(amount: Double) {
