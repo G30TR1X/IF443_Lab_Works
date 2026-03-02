@@ -45,6 +45,10 @@ fun main() {
 
     val metode: List<PaymentMethod> = listOf(gopay, kartuKreditBCA)
     for (m in metode) {
+        if (m is EWallet) {
+            m.topUp(50000.0)
+        }
+
         m.processPayment(75000.0)
     }
 }
