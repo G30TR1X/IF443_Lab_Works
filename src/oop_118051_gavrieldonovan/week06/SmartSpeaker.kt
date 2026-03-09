@@ -13,6 +13,6 @@ class SmartSpeaker(
     }
 
     fun playMusic(song: String) {
-        println("Mematikan lagu $song dari Spotify.")
+        println("Memainkan lagu $song dari Spotify.")
     }
 }
