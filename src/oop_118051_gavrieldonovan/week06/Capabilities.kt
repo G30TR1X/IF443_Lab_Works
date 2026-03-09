@@ -5,5 +5,5 @@ interface BluetoothConnectable {
 }
 
 interface Rechargeable {
-    fun recharge()
+    fun chargeBattery()
 }
