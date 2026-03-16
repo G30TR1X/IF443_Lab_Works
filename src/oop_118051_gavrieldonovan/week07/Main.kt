@@ -46,4 +46,11 @@ fun main() {
     GameManager.startGame()
     println("Status Game: ${GameManager.isGameRunning}")
 
+    println("\nChance Drop Legendary: ${ItemRarity.LEGENDARY.dropChance}%")
+    val playerWeapon = Weapon.forgeStarterSword()
+    println("\n=== PLAYER WEAPON DATA ===")
+    println("Weapon Name: ${playerWeapon.item.name}")
+    println("Weapon Damage: ${playerWeapon.item.damage}")
+    println("Weapon Rarity: ${playerWeapon.item.rarity}")
+    println("Weapon Durability: ${playerWeapon.durability}")
 }
