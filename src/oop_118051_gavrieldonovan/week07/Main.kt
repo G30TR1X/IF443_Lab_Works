@@ -53,4 +53,24 @@ fun main() {
     println("Weapon Damage: ${playerWeapon.item.damage}")
     println("Weapon Rarity: ${playerWeapon.item.rarity}")
     println("Weapon Durability: ${playerWeapon.durability}")
+
+    playerWeapon.item = playerWeapon.item.copy(damage = 25)
+    println("\n=== NEW UPGRADED PLAYER WEAPON DATA ===")
+    println("Weapon Name: ${playerWeapon.item.name}")
+    println("Weapon Damage: ${playerWeapon.item.damage}")
+    println("Weapon Rarity: ${playerWeapon.item.rarity}")
+    println("Weapon Durability: ${playerWeapon.durability}\n")
+
+    val monsterName: String = "Nicholas"
+    val gameExecutor: GameExecutor = GameExecutor()
+    val eventBattleState: List<BattleState> = listOf(
+        BattleState.LootDropped(GameItem("Diamond Sword", 10, ItemRarity.UNCOMMON)),
+        BattleState.SafeZone,
+        BattleState.MonsterEncounter(monsterName),
+        BattleState.GameOver("Dibunuh $monsterName"),
+    )
+
+    for (event in eventBattleState) {
+        gameExecutor.processEvent(event)
+    }
 }
