@@ -3,6 +3,7 @@ package oop_118051_gavrieldonovan.week07
 import javax.xml.crypto.Data
 
 fun main() {
+    /*
     println("=== TEST SINGLETON ===")
     println("Status: ${DatabaseManager.connectionStatus}")
     DatabaseManager.connect()
@@ -38,4 +39,11 @@ fun main() {
     }
 
     println("Message UI: $uiMessage")
+     */
+    println("Status Game: ${GameManager.isGameRunning}")
+
+    println("=== STARTING GAME ===")
+    GameManager.startGame()
+    println("Status Game: ${GameManager.isGameRunning}")
+
 }
