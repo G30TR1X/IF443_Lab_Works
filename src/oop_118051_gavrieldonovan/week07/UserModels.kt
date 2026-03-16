@@ -1,0 +1,3 @@
+package oop_118051_gavrieldonovan.week07
+
+class RegularUser(val name: String, val age: Int)
