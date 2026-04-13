@@ -32,6 +32,7 @@ fun main() {
         }
     }
 
+    /* Fallback logic with as? and elvis operator */
     val someObject: Any = 100
     val safeString = someObject as? String ?: "Unknown String"
     println("Hasil cast + fallback: $safeString")
