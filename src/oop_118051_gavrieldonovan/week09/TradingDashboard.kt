@@ -2,15 +2,19 @@ package oop_118051_gavrieldonovan.week09
 
 fun main() {
     val tradeHistory = listOf(
-        TradeLog("BTCUSDT", "Long", 20, 15.5, "CLOSED"),
-        TradeLog("ETHUSDT", "Short", 10, -5.2, "CLOSED"),
-        TradeLog("SOLUSDT", "Long", 5, 2.0, "OPEN"),
-        TradeLog("DOTBTC", "Short", 3, 12.8, "CLOSED"),
-        TradeLog("ADAUSDT", "Long", 10, -1.5, "OPEN"),
-        TradeLog("BNBUSDT", "Short", 25, 45.0, "CLOSED")
+        TradeLog("BTCUSDT", "LONG", 20, 15.5, "CLOSED"),
+        TradeLog("ETHUSDT", "SHORT", 10, -5.2, "CLOSED"),
+        TradeLog("SOLUSDT", "LONG", 5, 2.0, "OPEN"),
+        TradeLog("DOTBTC", "SHORT", 3, 12.8, "CLOSED"),
+        TradeLog("ADAUSDT", "LONG", 10, -1.5, "OPEN"),
+        TradeLog("BNBUSDT", "SHORT", 25, 45.0, "CLOSED")
     )
 
     val closedTrades = tradeHistory.filter { it.status == "CLOSED" }
     val winningTrades = closedTrades.filter { it.roe > 0 }
     val losingTrades = closedTrades.filter { it.roe <= 0 }
+
+    val topPerformersString = winningTrades
+        .sortedByDescending { it.roe }
+        .map { "WIN [${it.pair} - ${it.position}]: +${it.roe}% ROE (Lev: ${it.leverage}x)" }
 }
