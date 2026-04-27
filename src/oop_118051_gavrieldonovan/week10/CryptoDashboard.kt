@@ -13,6 +13,9 @@ fun main() {
 
     val txRepo =WalletRepository<Transaction>()
     txRepo.add(Transaction("T1", 5.0))
-    txRepo.add(Transction("T2", 30.0))
+    txRepo.add(Transaction("T2", 30.0))
     txRepo.add(Transaction("T3", 24.0))
+
+    val txResponse = ApiResponse("200 OK", txRepo.getAll())
+    txResponse.data.forEach { println("ID: ${it.id}, Amount: ${it.amount}") }
 }
