@@ -8,13 +8,12 @@ class WalletRepository<T> {
     fun getAll(): List<T> = items
 
     fun <T : Any> search(item: T): Boolean {
-        if (item is String) {
-            for (i in items) {
-                if (i.toString() == item.toString())
+        for (i in items) {
+            if (i is Coin && item is Coin) {
+                if (i.name == item.name) {
                     return true
+                }
             }
-        } else {
-            println("Item has to be a name!")
         }
 
         return false;
