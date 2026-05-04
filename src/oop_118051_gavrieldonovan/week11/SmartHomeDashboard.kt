@@ -31,19 +31,20 @@ fun main() {
         it.category == "Camera"
     }
     searchResult?.let {
-        it.diagnose()
+        println(it.diagnose())
     }
 
     with(homeDevices) {
         println("Found ${this.size} devices")
-        for (device in this) {
-            println("${device.name} - ${device.category} - ${device.isOnline} - ${device.powerLoad}")
-        }
     }
 
     val totalPower = homeDevices.run {
         sumOf { it.powerLoad }
     }
 
-    println("\nTotal power: $totalPower")
+    println("\nTotal power: $totalPower\n")
+
+    homeDevices.forEach {
+        println(it.diagnose())
+    }
 }
