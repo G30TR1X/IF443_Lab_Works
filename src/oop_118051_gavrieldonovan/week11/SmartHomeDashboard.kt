@@ -33,4 +33,11 @@ fun main() {
     searchResult?.let {
         it.diagnose()
     }
+
+    with(homeDevices) {
+        println("Found ${this.size} devices")
+        for (device in this) {
+            println("${device.name} - ${device.category} - ${device.isOnline} - ${device.powerLoad}")
+        }
+    }
 }
