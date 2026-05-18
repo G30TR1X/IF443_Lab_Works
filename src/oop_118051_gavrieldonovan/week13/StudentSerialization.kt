@@ -4,7 +4,7 @@ import java.io.FileNotFoundException
 
 data class Student(val name: String, val age: Int, val gpa: Double)
 
-fun Student.toCsv(): String = "$name, $age, $gpa"
+fun Student.toCsv(): String = "$name,$age,$gpa"
 
 fun fromCsv(line: String): Student {
     val parts = line.split(",")
